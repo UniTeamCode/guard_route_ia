@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "csv": "^6.2.10",
+    "csv-parse": "^5.3.8",
+    "pg-format": "^1.0.4",
+    "pg-promise": "^11.4.3",
+    "stream-transform": "^3.2.4"
+  }
+}

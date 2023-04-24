@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consult</title>
+    </head>
+
+    <body>
+        <div class="input-container">
+            <h2>Qual o seu sintoma?</h2>
+            <input class="symptomInput" hint="Sintoma" id="symptomInput">
+            <button class="searchButton" onclick="search()">Procurar</button>
+            <div id="band" class="pulseira">
+                teste
+            </div>
+        </div>
+    </body>
+    <style>
+        :root {
+            --bg: rgb(30, 30, 30);
+        }
+
+        body {
+            background-color: var(--bg);
+        }
+
+        .input-container {
+            position: static;
+            align-content: center;
+        }
+
+        .input-container h2 {
+            margin-left: 10px;
+            margin-bottom: -5px;
+            color: aliceblue;
+        }
+
+        div .symptomInput {
+            display: inline-flex;
+            flex-direction: row;
+            width: 200px;
+            height: 20px;
+            margin: 10px;
+        }
+
+        div .searchButton {
+            width: fit-content;
+            height: 40px;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+
+        div .searchButton:hover {
+            background-color: rgb(255, 40, 40);
+            color: rgb(206, 206, 206);
+            transition: background-color 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+
+        .pulseira {
+            margin: 20px;
+            width: 300px;
+            height: 40px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .low {
+            background-color: greenyellow;
+            color: black;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .moderate {
+            background-color: yellow;
+            color: black;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .high {
+            background-color: red;
+            color: rgb(241, 241, 241);
+            transition: background-color 0.2s, color 0.2s;
+        }
+    </style>
+    <script src="./script.js"></script>
+
+</html>

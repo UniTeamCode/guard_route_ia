@@ -24,3 +24,22 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Acurácia: {accuracy}")
+
+def create_scenarios(descricao_cid):    
+    new_data = [descricao_cid]
+    new_data_vectorized = vectorizer.transform(new_data)
+    predicted_class = model.predict(new_data_vectorized)
+    predicted_description = LabelEncoder().fit(data['Descricao do Procedimento']).inverse_transform(predicted_class)
+    print(f"A descricao do procedimento para a descricao do CID '{new_data[0]}' é '{predicted_description[0]}'")
+
+create_scenarios('FEBRE BAIXA') # A descricao do procedimento para a descricao do CID 'FEBRE BAIXA' é 'GRAU DE RISCO BAIXO'
+create_scenarios('FEBRE MODERADA') # A descricao do procedimento para a descricao do CID 'FEBRE MODERADA' é 'GRAU DE RISCO MODERADO'
+create_scenarios('FEBRE ALTA') # A descricao do procedimento para a descricao do CID 'FEBRE ALTA' é 'GRAU DE RISCO ALTO'
+
+create_scenarios('febre baixa') # A descricao do procedimento para a descricao do CID 'febre baixa' é 'GRAU DE RISCO BAIXO'
+create_scenarios('febre moderada') # A descricao do procedimento para a descricao do CID 'febre moderada' é 'GRAU DE RISCO MODERADO'
+create_scenarios('febre alta') # A descricao do procedimento para a descricao do CID 'febre alta' é 'GRAU DE RISCO ALTO'
+
+create_scenarios('NAUSEA') # A descricao do procedimento para a descricao do CID 'NAUSEA' é 'GRAU DE RISCO BAIXO'
+create_scenarios('NAUSEA MODERADA') # A descricao do procedimento para a descricao do CID 'NAUSEA MODERADA' é 'GRAU DE RISCO MODERADO'
+create_scenarios('DOR DE CABEÇA INTENSA, NAUSEA E VOMITO') # A descricao do procedimento para a descricao do CID 'DOR DE CABEÇA INTENSA, NAUSEA E VOMITO' é 'GRAU DE RISCO ALTO'

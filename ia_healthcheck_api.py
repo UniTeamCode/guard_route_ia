@@ -12,9 +12,6 @@ api = Api(app)
 
 data = pd.read_csv('data/GPT4/BASE_GRAU_DE_RISCO_SITOMAS.CSV', delimiter=';', low_memory=False, encoding='UTF-8')
 
-# data['Descrição do CID'].fillna(value='SEM INFORMAÇÃO', inplace=True)
-# data['Descrição do Procedimento'].fillna(value='PROCEDIMENTO DESCONHECIDO', inplace=True)
-
 X = data[['Descricao do Procedimento', 'Descricao do CID']]
 y = LabelEncoder().fit_transform(data['Descricao do Procedimento'])
 
